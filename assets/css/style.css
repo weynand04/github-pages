@@ -228,6 +228,9 @@ nav {
 }
 
 /* ----- FEATURED IMAGE BOX ----- */
+#avatarImage img {
+  transition: opacity 0.8s ease-in-out; /* Smooth transition for opacity */
+}
 .featured-image {
   display: flex;
   justify-content: right;
@@ -295,7 +298,7 @@ nav {
 .top-header h1 {
   font-weight: 600;
   color: var(--text-color-second);
-  margin-bottom: 10px;
+  margin-bottom: 5px;
 }
 .top-header span {
   color: #999;
@@ -366,55 +369,11 @@ h3 {
   gap: 20px;
   flex-wrap: wrap;
 }
-.project-box {
-  position: relative;
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  flex-direction: column;
-  width: 30%;
-  height: 250px;
-  background: var(--color-white);
-  border-radius: 20px;
-  box-shadow: rgba(17, 12, 46, 0.15) 0px 48px 100px 0px;
-  overflow: hidden;
-}
-.project-box > i {
-  font-size: 50px;
-  color: #00b5e7;
-  margin-bottom: 25px;
-}
-.project-box label {
-  font-size: 15px;
-  color: #777;
-}
-.project-box::after,
-.contact-info::after {
-  content: "";
-  position: absolute;
-  bottom: -100%;
-  background: var(--second-color);
-  width: 100%;
-  height: 100%;
-  transition: 0.4s;
-  z-index: 1;
-}
-.project-box:hover.project-box::after,
-.contact-info:hover.contact-info::after {
-  bottom: 0;
-}
-.project-box:hover.project-box i,
-.project-box:hover.project-box > h3,
-.project-box:hover.project-box > label {
-  color: var(--color-white);
-  z-index: 2;
-}
 
 .card {
   position: relative;
   width: 325px;
   height: 450px;
-  background: #000;
   border-radius: 18px;
   overflow: hidden;
   box-shadow: 0 10px 10px rgba(0, 0, 0, 0.2);
@@ -461,10 +420,9 @@ h3 {
 
 .details {
   position: absolute;
-
   left: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
   padding: 1.5em 1.5em 2em;
   background: #000a;
   backdrop-filter: blur(16px) saturate(120%);
@@ -494,21 +452,6 @@ h3 {
   opacity: 0.6;
 }
 
-.details .rating {
-  position: relative;
-  margin-bottom: 15px;
-  display: flex;
-  gap: 0.25em;
-}
-
-.details .rating i {
-  color: #e3c414;
-}
-
-.details .rating span {
-  margin-left: 0.25em;
-}
-
 .details .tags {
   display: flex;
   gap: 0.375em;
@@ -532,6 +475,7 @@ h3 {
 }
 
 .details .cast h3 {
+  color: var(--body-color);
   margin-bottom: 0.5em;
 }
 

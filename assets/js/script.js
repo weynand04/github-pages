@@ -53,7 +53,7 @@ function changeImage() {
   imageIndex = (imageIndex + 1) % imagePaths.length; 
 }
 
-setInterval(changeImage, 3000);
+setInterval(changeImage, 5000);
 
 /* ----- ## -- SCROLL REVEAL ANIMATION -- ## ----- */
  const sr = ScrollReveal({
@@ -70,10 +70,6 @@ sr.reveal('.featured-text-info',{delay: 200})
 sr.reveal('.featured-text-btn',{delay: 200})
 sr.reveal('.social_icons',{delay: 200})
 sr.reveal('.featured-image',{delay: 300})
-
-
-/* -- PROJECT BOX -- */
-sr.reveal('.project-box',{interval: 200})
 
 /* -- HEADINGS -- */
 sr.reveal('.top-header',{})
@@ -128,3 +124,41 @@ function scrollActive() {
 }
 
 window.addEventListener('scroll', scrollActive)
+
+/* ----- CAROUSEL ----- */
+
+// Get all cards and convert NodeList to an array
+const cards = Array.from(document.querySelectorAll('.card'));
+let currentIndex = 0;
+
+// Function to show the current set of cards (3 at a time)
+function showCards() {
+  for (let i = 0; i < 3; i++) {
+    const cardIndex = (currentIndex + i) % cards.length;
+    cards[cardIndex].style.display = 'block';
+  }
+
+  for (let i = 3; i < cards.length; i++) {
+    const cardIndex = (currentIndex + i) % cards.length;
+    cards[cardIndex].style.display = 'none';
+  }
+}
+
+// Function to handle next button click
+function nextCards() {
+  currentIndex = (currentIndex + 3) % cards.length;
+  showCards();
+}
+
+// Function to handle previous button click
+function prevCards() {
+  currentIndex = (currentIndex - 3 + cards.length) % cards.length;
+  showCards();
+}
+
+// Show the initial set of cards (the first 3)
+showCards();
+
+// Attach event listeners to next and previous buttons
+document.getElementById('nextBtn').addEventListener('click', nextCards);
+document.getElementById('prevBtn').addEventListener('click', prevCards);
