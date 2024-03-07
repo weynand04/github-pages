@@ -40,6 +40,20 @@ function myMenuFunction(){
     backDelay : 2000
  })
 
+/* ----- CHANGE IMAGE HERO ----- */
+
+var imageIndex = 1; 
+var imagePaths = [
+  "./assets/img/profile_2.png", 
+  "./assets/img/profile_1.jpg", 
+];
+
+function changeImage() {
+  document.getElementById("avatarImage").src = imagePaths[imageIndex];
+  imageIndex = (imageIndex + 1) % imagePaths.length; 
+}
+
+setInterval(changeImage, 3000);
 
 /* ----- ## -- SCROLL REVEAL ANIMATION -- ## ----- */
  const sr = ScrollReveal({
@@ -112,20 +126,5 @@ function scrollActive() {
     }
   })
 }
-
-var imageIndex = 1; // Indeks gambar saat ini
-var imagePaths = [
-  "./assets/img/profile_2.png", // Gantilah dengan path gambar pertama
-  "./assets/img/profile_1.jpg", // Gantilah dengan path gambar kedua
-];
-
-// Fungsi untuk mengganti gambar
-function changeImage() {
-  document.getElementById("avatarImage").src = imagePaths[imageIndex];
-  imageIndex = (imageIndex + 1) % imagePaths.length; // Pindah ke gambar berikutnya
-}
-
-    // Panggil fungsi changeImage secara berkala setiap 3 detik
-    setInterval(changeImage, 3000);
 
 window.addEventListener('scroll', scrollActive)
