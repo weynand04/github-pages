@@ -89,7 +89,6 @@ srRight.reveal('.skills-box',{delay: 100})
 srRight.reveal('.form-control',{delay: 100})
 
 
-
 /* ----- CHANGE ACTIVE LINK ----- */
 
 const sections = document.querySelectorAll('section[id]')
@@ -113,5 +112,20 @@ function scrollActive() {
     }
   })
 }
+
+var imageIndex = 1; // Indeks gambar saat ini
+var imagePaths = [
+  "./assets/img/profile_2.png", // Gantilah dengan path gambar pertama
+  "./assets/img/profile_1.jpg", // Gantilah dengan path gambar kedua
+];
+
+// Fungsi untuk mengganti gambar
+function changeImage() {
+  document.getElementById("avatarImage").src = imagePaths[imageIndex];
+  imageIndex = (imageIndex + 1) % imagePaths.length; // Pindah ke gambar berikutnya
+}
+
+    // Panggil fungsi changeImage secara berkala setiap 3 detik
+    setInterval(changeImage, 3000);
 
 window.addEventListener('scroll', scrollActive)
