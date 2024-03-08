@@ -125,40 +125,21 @@ function scrollActive() {
 
 window.addEventListener('scroll', scrollActive)
 
-/* ----- CAROUSEL ----- */
-
-// Get all cards and convert NodeList to an array
-const cards = Array.from(document.querySelectorAll('.card'));
-let currentIndex = 0;
-
-// Function to show the current set of cards (3 at a time)
-function showCards() {
-  for (let i = 0; i < 3; i++) {
-    const cardIndex = (currentIndex + i) % cards.length;
-    cards[cardIndex].style.display = 'block';
-  }
-
-  for (let i = 3; i < cards.length; i++) {
-    const cardIndex = (currentIndex + i) % cards.length;
-    cards[cardIndex].style.display = 'none';
-  }
+// Fungsi untuk membuka link di tab baru
+function openLinkInNewTab(link) {
+  window.open(link, '_blank');
 }
 
-// Function to handle next button click
-function nextCards() {
-  currentIndex = (currentIndex + 3) % cards.length;
-  showCards();
-}
-
-// Function to handle previous button click
-function prevCards() {
-  currentIndex = (currentIndex - 3 + cards.length) % cards.length;
-  showCards();
-}
-
-// Show the initial set of cards (the first 3)
-showCards();
-
-// Attach event listeners to next and previous buttons
-document.getElementById('nextBtn').addEventListener('click', nextCards);
-document.getElementById('prevBtn').addEventListener('click', prevCards);
+  var swiper = new Swiper('.swiper', {
+    slidesPerView: 3,
+    spaceBetween: 30,
+    loop: true, // Enable looping
+    autoplay: {
+      delay: 3000,
+      disableOnInteraction: false, 
+    },
+    pagination: {
+      el: '.swiper-pagination',
+      clickable: true,
+    },
+  });
