@@ -130,16 +130,39 @@ function openLinkInNewTab(link) {
   window.open(link, '_blank');
 }
 
-  var swiper = new Swiper('.swiper', {
-    slidesPerView: 3,
-    spaceBetween: 30,
-    loop: true, // Enable looping
-    autoplay: {
-      delay: 3000,
-      disableOnInteraction: false, 
-    },
-    pagination: {
-      el: '.swiper-pagination',
-      clickable: true,
-    },
-  });
+  // Initialize Swiper
+  var swiper;
+
+  function initSwiper(slidesPerView) {
+    swiper = new Swiper('.swiper', {
+      slidesPerView: slidesPerView,
+      spaceBetween: 20, // Jarak antar slide
+      loop: true, // Enable looping
+      autoplay: {
+        delay: 5000, // 5 seconds
+        disableOnInteraction: false, // Enable autoplay even if swiper is touched
+      },
+      pagination: {
+        el: '.swiper-pagination',
+        clickable: true,
+      },
+    });
+  }
+
+  initSwiper(3);
+
+  // Tambahkan event listener untuk media query
+  const mediaQuery = window.matchMedia('(max-width: 1080px)');
+
+  function handleMediaQuery(e) {
+    if (e.matches) {
+      swiper.destroy();
+      initSwiper('auto'); // Inisialisasi kembali dengan tampilan "auto" di bawah desktop
+    } else {
+      swiper.destroy();
+      initSwiper(3); // Inisialisasi kembali dengan tampilan tiga slide di desktop
+    }
+  }
+
+handleMediaQuery(mediaQuery);
+mediaQuery.addListener(handleMediaQuery);
