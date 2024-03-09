@@ -69,7 +69,7 @@ sr.reveal('.featured-name',{delay: 100})
 sr.reveal('.featured-text-info',{delay: 200})
 sr.reveal('.featured-text-btn',{delay: 200})
 sr.reveal('.social_icons',{delay: 200})
-sr.reveal('.featured-image',{delay: 300})
+sr.reveal('.featured-image', { delay: 300 })
 
 /* -- HEADINGS -- */
 sr.reveal('.top-header',{})
@@ -97,7 +97,7 @@ const srRight = ScrollReveal({
 
 srRight.reveal('.skills-box',{delay: 100})
 srRight.reveal('.form-control',{delay: 100})
-
+srRight.reveal('.swiper-slide',{delay:100})
 
 /* ----- CHANGE ACTIVE LINK ----- */
 
@@ -136,12 +136,12 @@ function openLinkInNewTab(link) {
   function initSwiper(slidesPerView) {
     swiper = new Swiper('.swiper', {
       slidesPerView: slidesPerView,
-      spaceBetween: 20, // Jarak antar slide
-      loop: true, // Enable looping
-      autoplay: {
-        delay: 5000, // 5 seconds
-        disableOnInteraction: false, // Enable autoplay even if swiper is touched
-      },
+      spaceBetween: 20,
+      //loop: true, // Enable looping
+      //autoplay: {
+      //  delay: 5000, // 5 seconds
+      //  disableOnInteraction: false, // Enable autoplay even if swiper is touched
+      //},
       pagination: {
         el: '.swiper-pagination',
         clickable: true,
@@ -151,16 +151,15 @@ function openLinkInNewTab(link) {
 
   initSwiper(3);
 
-  // Tambahkan event listener untuk media query
   const mediaQuery = window.matchMedia('(max-width: 1080px)');
 
   function handleMediaQuery(e) {
     if (e.matches) {
       swiper.destroy();
-      initSwiper('auto'); // Inisialisasi kembali dengan tampilan "auto" di bawah desktop
+      initSwiper('auto');
     } else {
       swiper.destroy();
-      initSwiper(3); // Inisialisasi kembali dengan tampilan tiga slide di desktop
+      initSwiper(3); 
     }
   }
 
