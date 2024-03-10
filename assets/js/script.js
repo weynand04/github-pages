@@ -42,19 +42,6 @@ let typingEffect = new Typed(".typedText", {
     backDelay: 2000
 })
 
-/* ----- CHANGE IMAGE HERO ----- */
-var imageIndex = 1;
-var imagePaths = [
-    "./assets/img/profile_2.png",
-    "./assets/img/profile_1.jpg",
-];
-
-function changeImage() {
-    document.getElementById("avatarImage").src = imagePaths[imageIndex];
-    imageIndex = (imageIndex + 1) % imagePaths.length;
-}
-
-setInterval(changeImage, 5000);
 
 /* ----- ## -- SCROLL REVEAL ANIMATION -- ## ----- */
 const sr = ScrollReveal({
@@ -145,10 +132,6 @@ function scrollActive() {
 
 window.addEventListener('scroll', scrollActive)
 
-// Fungsi untuk membuka link di tab baru
-function openLinkInNewTab(link) {
-    window.open(link, '_blank');
-}
 
 // Initialize Swiper
  var swiper;
