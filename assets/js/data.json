@@ -1,0 +1,58 @@
+[
+  {
+    "title": "Company Profile - DoctorQuinsy",
+    "year": "2019",
+    "tags": ["VueJs", "Bootstrap", "Figma"],
+    "img": "./assets/img/portfolio/1.svg",
+    "desc": "Marco, a disillusioned backpacker in his late 20s, embarks on a solitary journey in search for meaning.",
+    "previewLink": "./doctor-quincy-landingpages/"
+  },
+  {
+    "title": "Company Profile - BP. PAM Effata Waupnor",
+    "year": "2020",
+    "tags": ["Bootstrap 5"],
+    "img": "./assets/img/portfolio/2.svg",
+    "desc": "Marco, a disillusioned backpacker in his late 20s, embarks on a solitary journey in search for meaning.",
+    "previewLink": "./profile-pamEffata-FE/"
+  },
+  {
+    "title": "Company Profile - Dinas Pariwisata",
+    "year": "2023",
+    "tags": ["Bootstrap 5", "VueJs", "Figma"],
+    "img": "./assets/img/portfolio/3.svg",
+    "desc": "Marco, a disillusioned backpacker in his late 20s, embarks on a solitary journey in search for meaning.",
+    "previewLink": "./dinas-pariwisata-FE/"
+  },
+  {
+    "title": "TalentFinder - Joblisting Apps",
+    "year": "2023",
+    "tags": ["Bootstrap 5", "Figma"],
+    "img": "./assets/img/portfolio/4.svg",
+    "desc": "Marco, a disillusioned backpacker in his late 20s, embarks on a solitary journey in search for meaning.",
+    "previewLink": "#"
+  },
+  {
+    "title": "TodoList Apps",
+    "year": "2024",
+    "tags": ["Bootstrap 5"],
+    "img": "./assets/img/portfolio/5.svg",
+    "desc": "Marco, a disillusioned backpacker in his late 20s, embarks on a solitary journey in search for meaning.",
+    "previewLink": "#"
+  },
+  {
+    "title": "Rental Apps",
+    "year": "2024",
+    "tags": ["Bootstrap 5", "Laravel"],
+    "img": "./assets/img/portfolio/6.svg",
+    "desc": "Marco, a disillusioned backpacker in his late 20s, embarks on a solitary journey in search for meaning.",
+    "previewLink": "#"
+  },
+  {
+    "title": "AnimeList",
+    "year": "2024",
+    "tags": ["VueJs", "Vuetify", "Restful API"],
+    "img": "./assets/img/portfolio/7.svg",
+    "desc": "Marco, a disillusioned backpacker in his late 20s, embarks on a solitary journey in search for meaning.",
+    "previewLink": "#"
+  }
+]
