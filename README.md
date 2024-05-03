@@ -1,4 +1,4 @@
-# Portfolio Website
+# Portfolio Website V1
 
 This project was created using HTML, JavaScript and CSS technologies. This project also uses the scrollreveal framework for scroll animation and TypeJs for type animation.
 
