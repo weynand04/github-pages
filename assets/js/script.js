@@ -125,3 +125,43 @@ function scrollActive() {
 }
 
 window.addEventListener("scroll", scrollActive);
+
+// Project Function //
+document.addEventListener("DOMContentLoaded", function() {
+  fetch('assets/js/data.json')
+    .then(response => {
+      if (!response.ok) {
+        throw new Error('Network response was not ok');
+      }
+      return response.json();
+    })
+    .then(data => {
+      const projectContainer = document.getElementById('project-container');
+      data.forEach(project => {
+        const projectCard = document.createElement('div');
+        projectCard.classList.add('card'); 
+
+        projectCard.innerHTML = `
+          <div class="poster">
+            <img src="${project.image}" alt="${project.title}" />
+          </div>
+          <div class="details">
+            <h1>${project.title}</h1>
+            <h2>${project.year}</h2>
+            <div class="tags">
+              ${project.tags.map(tag => `<span class="tag">${tag}</span>`).join('')}
+            </div>
+            <p class="desc" >${project.description}</p>
+            <a href="${project.link}" target="_blank" rel="noopener noreferrer">
+              <button class="btn">Preview <i class="uil uil-eye"></i></button>
+            </a>
+          </div>
+        `;
+
+        projectContainer.appendChild(projectCard);
+      });
+    })
+    .catch(error => {
+      console.error('There was a problem with the fetch operation:', error);
+    });
+});
